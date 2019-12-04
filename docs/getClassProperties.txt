@@ -4,11 +4,11 @@ function  propertyValues = TableFunc( objClass )
     classProperties = metaclass(objClass);
 %     classProperties = properties(objClass);
 %      propertyValues2 = [];
-    k = 1;
+%    k = 1;
     for index = 1:length(classProperties.PropertyList)
-        propertyValues{k,1} = classProperties.PropertyList(index,1).Name;      
-        propertyValues{k,2} = classProperties.PropertyList(index,1).DefaultValue;      
-        k= k+1;
+        propertyValues{index,1} = classProperties.PropertyList(index,1).Name;      
+        propertyValues{index,2} = classProperties.PropertyList(index,1).DefaultValue;      
+%        k= k+1;
     end
         
 end
