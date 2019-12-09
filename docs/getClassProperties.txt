@@ -6,6 +6,7 @@ function  propertyValues = TableFunc( objClass )
 %      propertyValues2 = [];
 %    k = 1;
 %Source layerler için wizard ekranlarının tasarlanması.
+%Dosya ekleniyor ise "add to path" yapmamız gerek. Bunu otomatik olara klasörün başına '+' işareti koyarak yapabiliriz.
 %Dinamik source layerlar için konfigürasyon panelinin hazırlanması.
     for index = 1:length(classProperties.PropertyList)
         propertyValues{index,1} = classProperties.PropertyList(index,1).Name;      
