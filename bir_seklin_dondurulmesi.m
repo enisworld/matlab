@@ -4,6 +4,17 @@
 % y_points    % y eksenindeki noktaları ifade eder
 % rotationAngle  %döndürme açısını ifade eder.
 
+% Örnek;
+% x = [10  20 20 10 10]; y = [5 5 10 10 5];
+% f = figure;
+% ax = axes(f);
+% plot(ax,x,y,'Color', 'g');
+%
+% [newPosX newPosY] = customRotate(x,y,90);
+% hold on;
+% plot(ax,newPosX,newPosY,'Color', 'r');
+% hold off;
+
 
 function [newPositionX newPositionY] = customRotate(x_points, y_points, rotationAngle)
   centerX = (min(x_points)+max(x_points))/2;
@@ -12,7 +23,7 @@ function [newPositionX newPositionY] = customRotate(x_points, y_points, rotation
   rotationX = (x_points-centerX)*cos(rotationAngle) - (y_points-centerY)*sin(rotationAngle);
   rotationY = (x_points-centerX)*sin(rotationAngle) + (y_points-centerY)*cos(rotationAngle);
   
-  newPositionX = x_points - rotationX;
-  newPositionX = y_points - rotationY;
+  newPositionX = centerX + rotationX;
+  newPositionX = centerY + rotationY;
 end
 
